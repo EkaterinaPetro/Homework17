@@ -15,49 +15,49 @@ public class CalculatorServiceParamTests {
 
     public static Stream<Arguments> provideParamsForPlusTest() {
         return Stream.of(
-                Arguments.of(2, 2, "2 + 2 = 4"),
-                Arguments.of(10, 15, "10 + 15 = 25")
+                Arguments.of(2, 2, 4),
+                Arguments.of(10, 15, 25)
         );
     }
     @ParameterizedTest
     @MethodSource("provideParamsForPlusTest")
-    public void shouldReturnCorrectSum(int num1, int num2, String expectedSum) {
+    public void shouldReturnCorrectSum(int num1, int num2, int expectedSum) {
         Assertions.assertEquals(expectedSum, service.plus(num1, num2));
     }
 
     public static Stream<Arguments> provideParamsForMinusTest() {
         return Stream.of(
-                Arguments.of(5, 5, "5 - 5 = 0"),
-                Arguments.of(15, 5, "15 - 5 = 10")
+                Arguments.of(5, 5, 0),
+                Arguments.of(15, 5, 10)
         );
     }
     @ParameterizedTest
     @MethodSource("provideParamsForMinusTest")
-    public void shouldReturnCorrectDiff(int num1, int num2, String expectedDiff) {
+    public void shouldReturnCorrectDiff(int num1, int num2, int expectedDiff) {
         Assertions.assertEquals(expectedDiff, service.minus(num1, num2));
     }
 
     public static Stream<Arguments> provideParamsForMultiplyTest() {
         return Stream.of(
-                Arguments.of(2, 2, "2 * 2 = 4"),
-                Arguments.of(5, 0, "5 * 0 = 0")
+                Arguments.of(2, 2, 4),
+                Arguments.of(5, 0, 0)
         );
     }
     @ParameterizedTest
     @MethodSource("provideParamsForMultiplyTest")
-    public void shouldReturnCorrectWork(int num1, int num2, String expectedWork) {
+    public void shouldReturnCorrectWork(int num1, int num2, int expectedWork) {
         Assertions.assertEquals(expectedWork, service.multiply(num1, num2));
     }
 
     public static Stream<Arguments> provideParamsForDivideTest() {
         return Stream.of(
-                Arguments.of(5, 5, "5 / 5 = 1"),
-                Arguments.of(10, 2, "10 / 2 = 5")
+                Arguments.of(5, 5, 1),
+                Arguments.of(10, 2, 5)
         );
     }
     @ParameterizedTest
     @MethodSource("provideParamsForDivideTest")
-    public void shouldReturnCorrectQuotient(int num1, int num2, String expectedQuotient) {
+    public void shouldReturnCorrectQuotient(int num1, int num2, int expectedQuotient) {
         Assertions.assertEquals(expectedQuotient, service.divide(num1, num2));
     }
 }
